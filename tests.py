@@ -7,7 +7,9 @@ def collector():
 
 @pytest.mark.parametrize('book_name', [
     'Книга',
+
     'Длинное название до сорока символов',  # 37 символов
+
     'А'
 ])
 def test_add_new_book_valid(collector, book_name):
@@ -90,4 +92,8 @@ def test_favorites_operations(collector):
     collector.add_book_in_favorites('Несуществующая книга')
     assert 'Несуществующая книга' not in collector.get_list_of_favorites_books()
     collector.delete_book_from_favorites('Избранная книга')
+<<<<<<< HEAD
     assert collector.get_list_of_favorites_books() == ['Еще одна книга']
+=======
+    assert collector.get_list_of_favorites_books() == ['Еще одна книга']
+>>>>>>> 435d972ac4fe3ddb39fd2305eb9e0dfad0f8ef98
